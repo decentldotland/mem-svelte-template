@@ -9,7 +9,7 @@
   const readState = async () => {
     try {
       const response = await fetch("/api/contract").then((res) => res.json());
-      count = response.data || count;
+      count = response.data.count;
     } catch (err) {
       console.log(err);
     }
@@ -27,6 +27,7 @@
           function: "increment",
         }),
       });
+      await readState();
     } catch (err) {
       console.log(err);
     }

@@ -1,4 +1,4 @@
-let functionId = "3EK6nRfgJFYkBEwGmayIjQxa9ZKLf_YU5xJYUjOL2fk" // replace with your function id
+let functionId = "gK-A95gyEVdvb6PYp41ertOeId2PvNG5Zlvu0VtBFOQ" // replace with your function id
 
 export async function GET({ request }: { request: Request }) {
   try {
@@ -44,7 +44,6 @@ export async function GET({ request }: { request: Request }) {
 export async function POST({ request }: { request: Request }) {
   const data = await request.json();
 
-  console.log("-----", data)
   try {
     const result = (
       await fetch(
@@ -56,7 +55,7 @@ export async function POST({ request }: { request: Request }) {
         },
         body: JSON.stringify({
           functionId: functionId,
-          input: [data]
+          inputs: [{ "input": data }]
         })
       }).then(res => res.json())
     );
