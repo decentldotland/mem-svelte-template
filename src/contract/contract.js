@@ -6,8 +6,4 @@ export async function handle(state, action) {
     state.count += 1;
     return { state };
   }
-  if (input.function === "decrement") {
-    state.count -= 1;
-    return { state };
-  }
 }
