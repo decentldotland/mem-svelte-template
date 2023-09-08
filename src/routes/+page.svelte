@@ -15,7 +15,7 @@
     }
   };
 
-  const incrementState = async () => {
+  const handleState = async (fn: string) => {
     try {
       await fetch("/api/contract", {
         method: "POST",
@@ -24,7 +24,7 @@
           "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({
-          function: "increment",
+          function: fn,
         }),
       });
       await readState();
@@ -37,6 +37,7 @@
 <div class="main">
   <div class="content">
     Count: {count}
-    <button on:click={incrementState}>Increment</button>
+    <button on:click={() => handleState("increment")}>Increment</button>
+    <button on:click={() => handleState("decrement")}>Decrement</button>
   </div>
 </div>
