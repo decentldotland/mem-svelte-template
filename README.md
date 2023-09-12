@@ -2,7 +2,7 @@
   <a href="https://decent.land">
     <img src="https://mem-home.vercel.app/icons/mem/mem-logo-v2.svg" height="180">
   </a>
-  <h3 align="center"><code>@decentldotland/mem-nextjs-template</code></h3>
+  <h3 align="center"><code>@decentldotland/mem-svelte-template</code></h3>
 </p>
 
 # MEM Svelte template
